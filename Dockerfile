@@ -1,6 +1,9 @@
 FROM apollo13/nginx:16.04
 MAINTAINER Bohdan Kolecek <kolecek@apollo13.cz>
 
+# Set UTF-8 localeg for iconv()
+ENV LC_CTYPE C.UTF-8
+
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-php-xenial.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
     apt-get update && \
